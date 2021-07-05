@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile user</title>
+</head>
+<style type="text/css">
+  body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    text-align: center;
+  }
+  table {
+    border-collapse: collapse;
+    margin: auto;
+  }
+  caption {
+    font-size: 16px;
+  }
+  th {
+    background: #AFCDE7;
+    color: white;
+    padding: 10px 20px;
+  }
+  th, td {
+    border-style: solid;
+    border-color: white;
+  }
+  td {
+    padding: 5px 10px;
+    background: #D8E6F3;
+  }
+</style>
+<body>
+<table border="1">
+  <caption>User information</caption>
+  <tr>
+    <th>User id</th>
+    <th>User name</th>
+    <th>User lastName</th>
+    <th>User age</th>
+    <th>User username</th>
+    <th>User password</th>
+    <th>Edit user</th>
+  </tr>
+  <tr>
+    <td th:text="${user.id}"/>
+    <td th:text="${user.name}"/>
+    <td th:text="${user.lastname}"/>
+    <td th:text="${user.age}"/>
+    <td th:text="${user.username}"/>
+    <td th:text="${user.password}"/>
+    <td>
+      <a th:href="@{/user/{id}/edituser(id=${user.getId()})}">Edit</a>
+    </td>
+  </tr>
+</table>
+<br/>
+<a href="/logout">Logout profile</a>
+</body>
+</html>
